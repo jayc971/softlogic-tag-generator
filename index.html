@@ -1,285 +1,262 @@
 <html>
-
-<head>
-
+  <head>
     <style>
-    
-    .transition, form button, form .question label, form .question input[type="text"] {
-  -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-  -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-  -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-  transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
-}
+      :root {
+        --main-bg-color: #e75d61;
+      }
 
-* {
-  font-family: Helvetica, sans-serif;
-  font-weight: light;
-  -webkit-font-smoothing: antialiased;
-}
+      .transition,
+      form button,
+      form .question label,
+      form .question input[type="text"] {
+        -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+        -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+        -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+        transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+      }
 
-html {
-  background-color: #04AFBE;
-}
+      * {
+        font-family: Helvetica, sans-serif;
+        font-weight: light;
+        -webkit-font-smoothing: antialiased;
+      }
 
-form {
-    position: relative;
-    display: inline-block;
-    max-width: 700px;
-    min-width: 500px;
-    box-sizing: border-box;
-    padding: 11px 25px 47px 25px;
-    background-color: white;
-    border-radius: 4px;
-    margin: 40px 0;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-}
-form h1 {
-    text-align: center;
-    color: #04AFBE;
-    font-weight: 100;
-    letter-spacing: 0.01em;
-    /* margin-left: 15px; */
-   margin-bottom: 35px;
-    text-transform: uppercase;
-}
-form input[type="submit"] {
+      html {
+        background-color: #40b6e0;
+      }
 
-  background-color: white;
-  border: 1px solid #04AFBE;
-  line-height: 0;
-  font-size: 17px;
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 20px 15px;
-  border-radius: 4px;
-  color: #ffffff;
-  background-color:#04AFBE ;
-  font-weight: 100;
-  letter-spacing: 0.01em;
-  position: relative;
-  z-index: 1;
+      form {
+        position: relative;
+        display: inline-block;
+        max-width: 700px;
+        min-width: 500px;
+        box-sizing: border-box;
+        padding: 11px 25px 47px 25px;
+        background-color: white;
+        border-radius: 4px;
+        margin: 40px 0;
+        left: 50%;
+        -moz-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+      }
+      form h1 {
+        text-align: center;
+        color: var(--main-bg-color);
+        font-weight: 100;
+        letter-spacing: 0.01em;
+        /* margin-left: 15px; */
+        margin-bottom: 35px;
+        text-transform: uppercase;
+      }
+      form input[type="submit"] {
+        background-color: white;
+        border: 1px solid var(--main-bg-color);
+        line-height: 0;
+        font-size: 17px;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 20px 15px;
+        border-radius: 4px;
+        color: #ffffff;
+        background-color: var(--main-bg-color);
+        font-weight: 100;
+        letter-spacing: 0.01em;
+        position: relative;
+        z-index: 1;
 
-min-width: 100%;
+        min-width: 100%;
+      }
+      form button:hover,
+      form button:focus {
+        color: white;
+        background-color: var(--main-bg-color);
+      }
+      form .question {
+        position: relative;
+        padding: 5px 0;
+      }
+      form .question:first-of-type {
+        padding-top: 0;
+      }
+      form .question:last-of-type {
+        padding-bottom: 0;
+      }
+      form .question label {
+        transform-origin: left center;
+        color: var(--main-bg-color);
+        font-weight: 100;
+        letter-spacing: 0.01em;
+        font-size: 17px;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        display: block;
+        position: absolute;
+        margin-top: -40px;
+        z-index: 2;
+        pointer-events: none;
+      }
+      form .question input[type="text"] {
+        appearance: none;
+        background-color: none;
+        border: 1px solid var(--main-bg-color);
+        line-height: 0;
+        font-size: 17px;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        border-radius: 4px;
+        color: var(--main-bg-color);
+        font-weight: 100;
+        letter-spacing: 0.01em;
+        position: relative;
+        z-index: 1;
+      }
 
-}
-form button:hover, form button:focus {
-  color: white;
-  background-color: #04AFBE;
-}
-form .question {
-  position: relative;
-  padding: 5px 0;
-}
-form .question:first-of-type {
-  padding-top: 0;
-}
-form .question:last-of-type {
-  padding-bottom: 0;
-}
-form .question label {
-  transform-origin: left center;
-  color: #04AFBE;
-  font-weight: 100;
-  letter-spacing: 0.01em;
-  font-size: 17px;
-  box-sizing: border-box;
-  padding: 10px 15px;
-  display: block;
-  position: absolute;
-  margin-top: -40px;
-  z-index: 2;
-  pointer-events: none;
-}
-form .question input[type="text"] {
-  appearance: none;
-  background-color: none;
-  border: 1px solid #04AFBE;
-  line-height: 0;
-  font-size: 17px;
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-  padding: 10px 15px;
-  border-radius: 4px;
-  color: #04AFBE;
-  font-weight: 100;
-  letter-spacing: 0.01em;
-  position: relative;
-  z-index: 1;
-}
+      form .question textarea {
+        resize: vertical;
+        appearance: none;
+        background-color: none;
+        border: 1px solid var(--main-bg-color);
 
+        font-size: 17px;
+        width: 100%;
+        height: 40%;
+        display: block;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        border-radius: 4px;
+        color: var(--main-bg-color);
+        font-weight: 100;
 
-form .question textarea {
-    resize: vertical;
-  appearance: none;
-  background-color: none;
-  border: 1px solid #04AFBE;
+        position: relative;
+        z-index: 1;
+      }
 
-  font-size: 17px;
-  width: 100%;
-  height: 40%;
-  display: block;
-  box-sizing: border-box;
-  padding: 10px 15px;
-  border-radius: 4px;
-  color: #04AFBE;
-  font-weight: 100;
+      span {
+        display: inline-block;
+      }
 
-  position: relative;
-  z-index: 1;
-}
-
-span{
-    display:inline-block;
-}
-
-
-form .question input[type="text"]:focus {
-  outline: none;
-  background: #04AFBE;
-  color: white;
-  margin-top: 20px;
-}
-form .question input[type="text"]:valid {
-  margin-top: 20px;
-}
-form .question input[type="text"]:focus ~ label {
-  -moz-transform: translate(0, -35px);
-  -ms-transform: translate(0, -35px);
-  -webkit-transform: translate(0, -35px);
-  transform: translate(0px, -35px) scale(0.9);
-
-}
-form .question input[type="text"]:valid ~ label {
-
-
-
-  -moz-transform: translate(0px, 0px) scale(1);
-  -ms-transform: translate(0px, 0px) scale(1);
-  -webkit-transform: translate(0px, 0px) scale(1);
-  transform: translate(0px, -35px) scale(0.9);
-}
-
-
-    
+      form .question input[type="text"]:focus {
+        outline: none;
+        background: var(--main-bg-color);
+        color: white;
+        margin-top: 20px;
+      }
+      form .question input[type="text"]:valid {
+        margin-top: 20px;
+      }
+      form .question input[type="text"]:focus ~ label {
+        -moz-transform: translate(0, -35px);
+        -ms-transform: translate(0, -35px);
+        -webkit-transform: translate(0, -35px);
+        transform: translate(0px, -35px) scale(0.9);
+      }
+      form .question input[type="text"]:valid ~ label {
+        -moz-transform: translate(0px, 0px) scale(1);
+        -ms-transform: translate(0px, 0px) scale(1);
+        -webkit-transform: translate(0px, 0px) scale(1);
+        transform: translate(0px, -35px) scale(0.9);
+      }
     </style>
+  </head>
 
+  <body>
+    <form action="javascript:getTitle();">
+      <h1>Feel Pure price tag generator</h1>
+      <div class="question">
+        <input autocomplete="off" id="title" type="text" value="" />
+        <label>Bold title</label>
+      </div>
+      <div class="question">
+        <input autocomplete="off" id="location" type="text" />
+        <label>Non-bold title</label>
+      </div>
+      <div class="question">
+        <input autocomplete="off" id="price" type="text" />
 
-</head>
-
-<body>
-
-
-
-        <form action="javascript:getTitle();"> 
-                <h1>YOHO price tag generator</h1>
-                <div class="question">
-                  <input autocomplete="off"  id="title" type="text" value="">
-                  <label>Title</label>
-                </div>
-                <div class="question">
-                  <input autocomplete="off"  id="location" type="text">
-                  <label>Location</label>
-                </div>
-                <div class="question">
-                  <input autocomplete="off"  id="price" type="text">
-               
-                  <label>Price</label>
-                </div>
-                <div class="question">
-                  <input autocomplete="off" id="img"  type="text">
-                  <label>Image URL</label>
-                </div>
-                <div class="question">
+        <label>Price</label>
+      </div>
+      <div class="question">
+        <input autocomplete="off" id="img" type="text" />
+        <label>Image URL</label>
+      </div>
+      <!-- <div class="question">
                         <input autocomplete="off"  id="link" type="text">
                         <label>Link</label>
-                      </div>
+                      </div>-->
 
-                      <div class="question">
-                <input type="submit" value="Generate">
-            </div>
-                <div class="question">
-                        <textarea autocomplete="off" id="theCode" rows="13" cols="90"></textarea>
-                      </div>
-               
-
-              </form>
-
-
-              
-
-    
-
-<div>
-
-
-    <form style="visibility: hidden;"  action="javascript:getTitle();">
-
-            Title : <input required id="title" type="text" value=""> <br><br>
-            Location : <input required id="location" type="text"> <br><br>
-            Price : <input required id="price" type="text"> <br><br>
-           Image URL : <input id="img" required type="text"> <br><br>
-            Link : <input required id="link" type="text"> <br><br>
-
-
-            <input type="submit">
-            <textarea id="theCode" rows="13" cols="90"></textarea>
+      <div class="question">
+        <input type="submit" value="Generate" />
+      </div>
+      <div class="question">
+        <textarea
+          autocomplete="off"
+          id="theCode"
+          rows="13"
+          cols="90"
+        ></textarea>
+      </div>
     </form>
 
- 
+    <div>
+      <form style="visibility: hidden;" action="javascript:getTitle();">
+        Title : <input required id="title" type="text" value="" /> <br /><br />
+        <!--  Location : <input required id="location" type="text"> <br><br>-->
+        Price : <input required id="price" type="text" /> <br /><br />
+        Image URL : <input id="img" required type="text" /> <br /><br />
+        Link : <input required id="link" type="text" /> <br /><br />
 
-  
+        <input type="submit" />
+        <textarea id="theCode" rows="13" cols="90"></textarea>
+      </form>
+    </div>
 
-</div>
+    <script>
+      function getTitle() {
+        //var linkDiv = document.getElementById('link').value;
+        var imgDiv = document.getElementById("img").value;
+        var boldTitleDiv = document.getElementById("title").value;
+        var nonBoldTitleDiv = document.getElementById("location").value;
+        var priceDiv = document.getElementById("price").value;
 
-<script>
-function getTitle(){
-    
+        //linkDiv = linkDiv.replace(/^/, '<div style="opacity: 1;"><a href="');
+        //linkDiv += '" class="sf-property" target="_blank">';
 
-var linkDiv = document.getElementById('link').value;
-var imgDiv = document.getElementById('img').value;
-var titleDiv = document.getElementById('title').value;
-var locationDiv = document.getElementById('location').value;
-var priceDiv = document.getElementById('price').value;
+        if (!imgDiv == "") {
+          imgDiv = imgDiv.replace(/^/, '<table><tbody><tr><td><img src="');
+          imgDiv +=
+            '" height="100px" width="100px" draggable="false"></td><td><p><b>';
+        } else {
+          imgDiv =
+            '<table><tbody><tr><td><img src="" height="100px" width="100px" draggable="false"></td>';
+        }
 
-linkDiv = linkDiv.replace (/^/,'<div style="opacity: 1;"><a href="');
-linkDiv += '" class="sf-property" target="_blank">';
+        boldTitleDiv = boldTitleDiv.replace(/^/, "<td><p><b>");
+        boldTitleDiv += "";
 
-if (!imgDiv==""){
-    imgDiv = imgDiv.replace (/^/,'<div class="sf-prop-img"><img src="');
-    imgDiv += '"></div>';
-}else{
-    imgDiv="";
-}
+        nonBoldTitleDiv = nonBoldTitleDiv.replace(/^/, "</b>");
+        nonBoldTitleDiv += "</p>";
 
+        if (!priceDiv == "") {
+          priceDiv = priceDiv.replace(/^/, '<font size="4"><b>');
+          priceDiv += "</font></td></tr>";
+        } else {
+          priceDiv = '<font size="4"><b>$3,199.99</b></font></td></tr>';
+        }
 
-titleDiv = titleDiv.replace (/^/,'<div class="sf-prop-data"><div class="sf-prop-name">');
-titleDiv += '</div>';
+        var theResult =
+          //linkDiv +
+          imgDiv +
+          boldTitleDiv +
+          nonBoldTitleDiv +
+          priceDiv +
+          "</tbody></table>";
 
-locationDiv = locationDiv.replace (/^/,'<div class="sf-prop-desc"><div class="yoho-location-name">');
-locationDiv += '</div>';
-
-if (!priceDiv==""){
-priceDiv = priceDiv.replace (/^/,'<div class="price-bgk">&nbsp&nbsp');
-priceDiv += '&nbsp&nbsp</div>';
-}else{
-    priceDiv="";
-}
-
-
-var theResult = linkDiv + imgDiv + titleDiv + locationDiv + priceDiv + '</div></div>&nbsp;</a><br></div>';
-
-document.getElementById("theCode").value=theResult;
-}
-
-
-</script>
-
-
-</body>
-
+        document.getElementById("theCode").value = theResult;
+      }
+    </script>
+  </body>
 </html>
