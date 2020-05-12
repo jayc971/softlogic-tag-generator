@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       :root {
-        --main-bg-color: #e75d61;
+        --main-bg-color: #193763;
       }
 
       .transition,
@@ -23,7 +23,7 @@
       }
 
       html {
-        background-color: #40b6e0;
+        background-color: #0976bc;
       }
 
       form {
@@ -166,7 +166,7 @@
 
   <body>
     <form action="javascript:getTitle();">
-      <h1>Feel Pure price tag generator</h1>
+      <h1>Softlogic price tag generator</h1>
       <div class="question">
         <input autocomplete="off" id="title" type="text" value="" />
         <label>Bold title</label>
@@ -184,10 +184,10 @@
         <input autocomplete="off" id="img" type="text" />
         <label>Image URL</label>
       </div>
-      <!-- <div class="question">
-                        <input autocomplete="off"  id="link" type="text">
-                        <label>Link</label>
-                      </div>-->
+      <div class="question">
+        <input autocomplete="off" id="link" type="text" />
+        <label>Link</label>
+      </div>
 
       <div class="question">
         <input type="submit" value="Generate" />
@@ -205,7 +205,7 @@
     <div>
       <form style="visibility: hidden;" action="javascript:getTitle();">
         Title : <input required id="title" type="text" value="" /> <br /><br />
-        <!--  Location : <input required id="location" type="text"> <br><br>-->
+        Location : <input required id="location" type="text" /> <br /><br />
         Price : <input required id="price" type="text" /> <br /><br />
         Image URL : <input id="img" required type="text" /> <br /><br />
         Link : <input required id="link" type="text" /> <br /><br />
@@ -217,14 +217,14 @@
 
     <script>
       function getTitle() {
-        //var linkDiv = document.getElementById('link').value;
+        var linkDiv = document.getElementById("link").value;
         var imgDiv = document.getElementById("img").value;
         var boldTitleDiv = document.getElementById("title").value;
         var nonBoldTitleDiv = document.getElementById("location").value;
         var priceDiv = document.getElementById("price").value;
 
-        //linkDiv = linkDiv.replace(/^/, '<div style="opacity: 1;"><a href="');
-        //linkDiv += '" class="sf-property" target="_blank">';
+        linkDiv = linkDiv.replace(/^/, '<a href="');
+        linkDiv += '" target="_blank">';
 
         if (!imgDiv == "") {
           imgDiv = imgDiv.replace(/^/, '<table><tbody><tr><td><img src="');
@@ -238,7 +238,7 @@
         boldTitleDiv = boldTitleDiv.replace(/^/, "<td><p><b>");
         boldTitleDiv += "";
 
-        nonBoldTitleDiv = nonBoldTitleDiv.replace(/^/, "</b>");
+        nonBoldTitleDiv = nonBoldTitleDiv.replace(/^/, "</b> ");
         nonBoldTitleDiv += "</p>";
 
         if (!priceDiv == "") {
@@ -249,12 +249,12 @@
         }
 
         var theResult =
-          //linkDiv +
+          linkDiv +
           imgDiv +
           boldTitleDiv +
           nonBoldTitleDiv +
           priceDiv +
-          "</tbody></table>";
+          "</tbody></table></a>";
 
         document.getElementById("theCode").value = theResult;
       }
